@@ -11,6 +11,8 @@ area = display_width*display_height
 
 os.environ["SDL_VIDEO_WINDOW_POS"] = "50,50"
 
+APP_FOLDER = os.path.dirname(os.path.realpath(sys.argv[0]))
+
 black = (0,0,0)
 white = (255,255,255)
 green = (0,200,0)
@@ -28,10 +30,10 @@ car_width = 73
 graphics = 0
 score = -10
 
-trackimg = pygame.image.load('Pictures\Track_2.png').convert()
+trackimg = pygame.image.load(os.path.join(APP_FOLDER, 'Pictures\Track_2.png')).convert()
 
 
-gameoversound = pygame.mixer.Sound('Music\Gameover_sound.wav')
+gameoversound = pygame.mixer.Sound(os.path.join(APP_FOLDER, 'Music\Gameover_sound.wav'))
 
 def text_objects(text, font):
     textSurface = font.render(text, True, white)
@@ -99,7 +101,7 @@ def scorekeeper(score):
     gameDisplay.blit(text,(100,500))
 
 def game_end():
-    pygame.mixer.music.load('Music\Gameover_music.wav')
+    pygame.mixer.music.load(os.path.join(APP_FOLDER, 'Music\Gameover_music.wav'))
     pygame.mixer.music.play()    
     start = True
     while start == True:

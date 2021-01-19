@@ -17,13 +17,15 @@ yellow = (247, 243, 0)
 
 highscore_file = "highscore.txt"
 
+APP_FOLDER = os.path.dirname(os.path.realpath(sys.argv[0]))
+
 gameDisplay = pygame.display.set_mode((display_width,display_height))
-pygame.display.set_caption("Mario Kart Remastered")
+pygame.display.set_caption(os.path.join(APP_FOLDER, "Mario Kart Remastered"))
 clock = pygame.time.Clock()
 
-pygame.mixer.music.load('Music\Intro_music.wav')
+pygame.mixer.music.load(os.path.join(APP_FOLDER, 'Music\Intro_music.wav'))
 
-backgroundimg = pygame.image.load('Pictures\intro_background_base.png').convert()
+backgroundimg = pygame.image.load(os.path.join(APP_FOLDER, 'Pictures\intro_background_base.png')).convert()
 
 def text_objects(text, font):
     textSurface = font.render(text, True, white)

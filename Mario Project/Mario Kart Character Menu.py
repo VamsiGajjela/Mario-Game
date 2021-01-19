@@ -19,21 +19,23 @@ pink = (255, 61, 183)
 
 highscore_file = "highscore.txt"
 
-pygame.mixer.music.load('Music\Characterselect_music.wav')
-mariosound = pygame.mixer.Sound('Mario\Mario_music.wav')
-luigisound = pygame.mixer.Sound('Luigi\Luigi_music.wav')
-toadsound = pygame.mixer.Sound('Toad\Toad_music.wav')
-peachsound = pygame.mixer.Sound('Peach\Peach_music.wav')
+APP_FOLDER = os.path.dirname(os.path.realpath(sys.argv[0]))
+
+pygame.mixer.music.load(os.path.join(APP_FOLDER, 'Music\Characterselect_music.wav'))
+mariosound = pygame.mixer.Sound(os.path.join(APP_FOLDER, 'Mario\Mario_music.wav'))
+luigisound = pygame.mixer.Sound(os.path.join(APP_FOLDER, 'Luigi\Luigi_music.wav'))
+toadsound = pygame.mixer.Sound(os.path.join(APP_FOLDER, 'Toad\Toad_music.wav'))
+peachsound = pygame.mixer.Sound(os.path.join(APP_FOLDER, 'Peach\Peach_music.wav'))
 
 gameDisplay = pygame.display.set_mode((display_width,display_height))
 pygame.display.set_caption("Mario Kart Remastered")
 clock = pygame.time.Clock()
 
-mariocarimg = pygame.image.load('Mario\mario_selection.png')
-luigicarimg = pygame.image.load('Luigi\luigi_selection.png')
-toadcarimg = pygame.image.load('Toad\Toad_selection.png')
-peachcarimg = pygame.image.load('Peach\peach_selection.png')
-backgroundimg = pygame.image.load('Pictures\instruction_background_base.png').convert()
+mariocarimg = pygame.image.load(os.path.join(APP_FOLDER, 'Mario\mario_selection.png'))
+luigicarimg = pygame.image.load(os.path.join(APP_FOLDER, 'Luigi\luigi_selection.png'))
+toadcarimg = pygame.image.load(os.path.join(APP_FOLDER, 'Toad\Toad_selection.png'))
+peachcarimg = pygame.image.load(os.path.join(APP_FOLDER, 'Peach\peach_selection.png'))
+backgroundimg = pygame.image.load(os.path.join(APP_FOLDER, 'Pictures\instruction_background_base.png')).convert()
 
 def text_objects(text, font):
     textSurface = font.render(text, True, white)
