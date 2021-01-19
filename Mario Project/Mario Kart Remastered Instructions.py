@@ -15,11 +15,9 @@ gameDisplay = pygame.display.set_mode((display_width,display_height))
 pygame.display.set_caption("Mario Kart Remastered")
 clock = pygame.time.Clock()
 
-APP_FOLDER = os.path.dirname(os.path.realpath(sys.argv[0]))
+pygame.mixer.music.load('Music\Instructions_music.wav')
 
-pygame.mixer.music.load(os.path.join(APP_FOLDER, 'Music\Instructions_music.wav'))
-
-instructionimg = pygame.image.load(os.path.join(APP_FOLDER, 'Pictures\instruction_background_base.png')).convert()
+instructionimg = pygame.image.load('Pictures\instruction_background_base.png').convert()
 
 
 def text_objects(text, font):

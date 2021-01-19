@@ -9,9 +9,6 @@ from os import path
 
 pygame.init()
 
-APP_FOLDER = os.path.dirname(os.path.realpath(sys.argv[0]))
-
-
 display_width = 800
 display_height = 600
 
@@ -40,22 +37,22 @@ graphics2=0
 score = -10
 score2 = -10
 
-carimg = pygame.image.load(os.path.join(APP_FOLDER, 'Mario\mario_straight.png'))
-carrightimg = pygame.image.load(os.path.join(APP_FOLDER,'Mario\mario_right_turn.png'))
-carleftimg = pygame.image.load(os.path.join(APP_FOLDER, 'Mario\mario_left_turn.png'))
-trackimg = pygame.image.load(os.path.join(APP_FOLDER, 'Pictures\Track_2.png')).convert()
-goombaimg= pygame.image.load(os.path.join(APP_FOLDER,'Goomba\Vector-goomba.png'))
-koopaimg = pygame.image.load(os.path.join(APP_FOLDER, 'Koopa\Vector-koopa.png'))
-bombimg = pygame.image.load(os.path.join(APP_FOLDER, 'Bomb\Vector-bomb.png'))
+carimg = pygame.image.load('Mario\mario_straight.png')
+carrightimg = pygame.image.load('Mario\mario_right_turn.png')
+carleftimg = pygame.image.load('Mario\mario_left_turn.png')
+trackimg = pygame.image.load('Pictures\Track_2.png').convert()
+goombaimg= pygame.image.load('Goomba\Vector-goomba.png')
+koopaimg = pygame.image.load('Koopa\Vector-koopa.png')
+bombimg = pygame.image.load('Bomb\Vector-bomb.png')
 
-koopasound = pygame.mixer.Sound(os.path.join(APP_FOLDER, 'Koopa\Koopa_crash.wav'))
-bombsound = pygame.mixer.Sound(os.path.join(APP_FOLDER,'Bomb\Bomb_crash.wav'))
-goombasound = pygame.mixer.Sound(os.path.join(APP_FOLDER, 'Goomba\Goomba_crash.wav'))
-gameoversound = pygame.mixer.Sound(os.path.join(APP_FOLDER,'Music\Gameover_sound.wav'))
+koopasound = pygame.mixer.Sound('Koopa\Koopa_crash.wav')
+bombsound = pygame.mixer.Sound('Bomb\Bomb_crash.wav')
+goombasound = pygame.mixer.Sound('Goomba\Goomba_crash.wav')
+gameoversound = pygame.mixer.Sound('Music\Gameover_sound.wav')
 
-carimg2 = pygame.image.load(os.path.join(APP_FOLDER,'Luigi\luigi_straight.png'))
-carrightimg2 = pygame.image.load(os.path.join(APP_FOLDER,'Luigi\luigi_right_turn.png'))
-carleftimg2 = pygame.image.load(os.path.join(APP_FOLDER,'Luigi\luigi_left_turn.png'))
+carimg2 = pygame.image.load('Luigi\luigi_straight.png')
+carrightimg2 = pygame.image.load('Luigi\luigi_right_turn.png')
+carleftimg2 = pygame.image.load('Luigi\luigi_left_turn.png')
 
 goombaspeed = 4
 goombax=(random.randint(50, 677))
@@ -183,7 +180,7 @@ def car_display2(x,y):
 def game(goombay,goombax,score,goombaspeed,koopay,koopax,koopaspeed,bomby,bombx,bombspeed,graphics,road_y,graphics2,score2):
     gameDisplay.fill(black)
     pygame.mixer.music.stop()
-    pygame.mixer.music.load(os.path.join(APP_FOLDER, 'Music\Track_music.wav'))
+    pygame.mixer.music.load('Music\Track_music.wav')
     pygame.mixer.music.play()
 
     display_message("Ready?",400,50)
